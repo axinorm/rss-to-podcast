@@ -1,0 +1,8 @@
+# Global
+.DS_Store
+.vscode
+.venv
+
+# Script
+outputs/*.txt
+outputs/*.wav

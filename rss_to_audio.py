@@ -46,7 +46,7 @@ def parse_args():
     parser.add_argument('--max-articles', type=int, default=10, help="Number of articles to process")
     parser.add_argument('--audio-model', default="prince-canuma/Kokoro-82M", help="MLX Audio TTS model path")
     parser.add_argument('--audio-voice', default="bf_emma", help="MLX Audio TTS voice")
-    parser.add_argument('--audio-speed', type=float, default=1.0, help="Audio reading speed")
+    parser.add_argument('--audio-speed', type=float, default=0.8, help="Audio reading speed")
     parser.add_argument('--audio-lang-code', default="b", help="Audio language code (e.g., 'b' for British English)")
     parser.add_argument('--output-dir', default="./outputs", help="Directory for output files")
     return parser.parse_args()
@@ -173,7 +173,7 @@ def extract_article_content(url, content_selector=None):
         # Clean up whitespace and limit length
         content = content.replace('\n', ' ').replace('\r', ' ')
         content = ' '.join(content.split())
-        return content[:8000]  # Limit to 8000 characters for LLM input
+        return content
     except Exception as e:
         print(f"Error extracting content from {url}: {e}")
         return ""
@@ -189,7 +189,7 @@ Title: {title}
 Content: {text}
 
 Instructions:
-- Create a detailed extract of 8-12 sentences (much longer than a summary)
+- Create a detailed extract of 30 sentences maximum
 - Include all key points, important details, and context
 - Maintain the technical depth and nuance of the original
 - Use clear, professional English suitable for audio narration

@@ -1,11 +1,11 @@
-# Comprehensive RSS Article Extractor with Ollama & MLX-Audio
+# RSS to Audio
 
 This script fetches articles from any RSS feed, generates comprehensive extracts using an Ollama LLM, and optionally creates an English audio narration using MLX Audio.
 
 ## Requirements
 
 - Python 3.10+
-- `requests`, `beautifulsoup4`, `mlx-lm`, `mlx-audio` (for audio)
+- `requests`, `beautifulsoup4`, `mlx-audio` (for audio)
 - Ollama server running with your chosen model
 
 ## Installation
@@ -31,36 +31,20 @@ python rss_to_audio.py --rss-url <RSS_FEED_URL> --site-name <SITE_NAME> [options
 | `--model-name`       | string  | `gemma3:12b`                          | Ollama model name                                                  |
 | `--rss-url`          | string  | **(required)**                        | RSS feed URL to fetch articles from                                |
 | `--site-name`        | string  | **(required)**                        | Site name (used in output files and intro narration)               |
-| `--content-selector` | string  | `None`                                | CSS selector for main article content (optional)               |
+| `--content-selector` | string  | `None`                                | CSS selector for main article content (optional)                   |
 | `--max-articles`     | int     | `10`                                  | Number of articles to process                                      |
 | `--audio-model`      | string  | `prince-canuma/Kokoro-82M`            | MLX Audio TTS model path                                           |
 | `--audio-voice`      | string  | `bf_emma`                             | MLX Audio TTS voice                                                |
 | `--audio-speed`      | float   | `1.0`                                 | Reading speed for audio (1.0 = normal)                             |
-| `--audio-lang-code`  | string  | `b`                                  | Language code for TTS (e.g., `b` for British English)                     |
+| `--audio-lang-code`  | string  | `b`                                   | Language code for TTS (e.g., `b` for British English)              |
 | `--output-dir`       | string  | `./outputs`                           | Directory for output files                                         |
 
-### Example
-
-```bash
-python crawler_v2.py
---rss-url "http://thenewstack.io/blog/feed/"
---site-name "The New Stack"
---content-selector .article
---max-articles 3
---ollama-url "http://localhost:11434/api/generate"
---model-name "gemma3:12b"
---audio-model "prince-canuma/Kokoro-82M"
---audio-voice "bf_emma"
---audio-speed 1.1
---output-dir "./outputs"
-```
-
-### Output
+### Outputs
 
 - A text file with comprehensive extracts:  
-  `outputs/the_new_stack_extracts_YYYY-MM-DD.txt`
+  `outputs/[site-name]_extracts_YYYY-MM-DD.txt`
 - An audio file with narration (if MLX Audio is available):  
-  `outputs/the_new_stack_extracts_YYYY-MM-DD.wav`
+  `outputs/[site-name]_extracts_YYYY-MM-DD.wav`
 
 ### Notes
 

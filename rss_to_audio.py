@@ -195,7 +195,7 @@ Instructions:
 - Use clear, professional English suitable for audio narration
 - Structure it as a flowing narrative that's pleasant to listen to
 - Include specific examples, data points, or quotes if mentioned
-- Don't mention that this is an extract or summary
+- Don't mention that this is an extract, summary or a text made for audio
 - Make it comprehensive enough to understand the full article content
 
 Extract:"""

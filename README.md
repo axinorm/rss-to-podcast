@@ -59,4 +59,3 @@ Don't hesitate to read the following blog posts to find out more AI-generated au
 
 * [Transform RSS feeds into podcasts using AI](https://blog.filador.ch/en/posts/transform-rss-feeds-into-podcasts-using-ai) - English version
 * [Transformer des flux RSS en Podcast grâce à l'IA](https://blog.filador.ch/posts/transformer-des-flux-rss-en-podcast-grace-a-l-ia) - French version
-

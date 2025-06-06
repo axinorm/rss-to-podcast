@@ -31,7 +31,7 @@ try:
 except ImportError:
     MLX_AVAILABLE = False
     print("⚠️  mlx-audio not found. Audio generation will be skipped.")
-    print("Install with: pip install mlx-lm mlx-audio")
+    print("Install with: pip install mlx-audio")
 
 def parse_args():
     """
@@ -46,7 +46,7 @@ def parse_args():
     parser.add_argument('--max-articles', type=int, default=10, help="Number of articles to process")
     parser.add_argument('--audio-model', default="prince-canuma/Kokoro-82M", help="MLX Audio TTS model path")
     parser.add_argument('--audio-voice', default="bf_emma", help="MLX Audio TTS voice")
-    parser.add_argument('--audio-speed', type=float, default=0.8, help="Audio reading speed")
+    parser.add_argument('--audio-speed', type=float, default=1.0, help="Audio reading speed")
     parser.add_argument('--audio-lang-code', default="b", help="Audio language code (e.g., 'b' for British English)")
     parser.add_argument('--output-dir', default="./outputs", help="Directory for output files")
     return parser.parse_args()

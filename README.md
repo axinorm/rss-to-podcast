@@ -2,6 +2,8 @@
 
 This script fetches articles from any RSS feed, generates comprehensive extracts using an Ollama LLM, and optionally creates an English audio narration using MLX Audio.
 
+**Enjoy your automated, narrated RSS digests!**
+
 ## Requirements
 
 - Python 3.10+
@@ -49,9 +51,12 @@ python rss_to_audio.py --rss-url <RSS_FEED_URL> --site-name <SITE_NAME> [options
 ### Notes
 
 - You must have an Ollama server running and the specified model available.
-- For audio, you must have `mlx-audio` installed and the model/voice downloaded.
 - The script estimates audio duration based on a typical narration speed (150 words per minute).
 
----
+## Blog posts
 
-**Enjoy your automated, narrated RSS digests!**
+Don't hesitate to read the following blog posts to find out more AI-generated audio from RSS feeds:
+
+* [Transform RSS feeds into podcasts using AI](https://blog.filador.ch/en/posts/transform-rss-feeds-into-podcasts-using-ai) - English version
+* [Transformer des flux RSS en Podcast grâce à l'IA](https://blog.filador.ch/posts/transformer-des-flux-rss-en-podcast-grace-a-l-ia) - French version
+

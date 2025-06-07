@@ -1,14 +1,15 @@
-# RSS to Audio
+# RSS to Podcast
 
-This script fetches articles from any RSS feed, generates comprehensive extracts using an Ollama LLM, and optionally creates an English audio narration using MLX Audio.
+This script fetches articles from any RSS feed, generates comprehensive extracts using an Ollama LLM, and optionally creates an audio narration using MLX Audio.
 
 **Enjoy your automated, narrated RSS digests!**
 
 ## Requirements
 
-- Python 3.10+
-- `requests`, `beautifulsoup4`, `mlx-audio` (for audio)
+- macOS with Apple Silicon chip
 - Ollama server running with your chosen model
+- Python 3.10+
+- `requests`, `beautifulsoup4`, `mlx_lm` and `mlx-audio`
 
 ## Installation
 
@@ -22,7 +23,7 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-python rss_to_audio.py --rss-url <RSS_FEED_URL> --site-name <SITE_NAME> [options]
+python rss_to_podcast.py --rss-url <RSS_FEED_URL> --site-name <SITE_NAME> [options]
 ```
 
 ### Arguments
@@ -57,5 +58,5 @@ python rss_to_audio.py --rss-url <RSS_FEED_URL> --site-name <SITE_NAME> [options
 
 Don't hesitate to read the following blog posts to find out more AI-generated audio from RSS feeds:
 
-* [Transform RSS feeds into podcasts using AI](https://blog.filador.ch/en/posts/transform-rss-feeds-into-podcasts-using-ai) - English version
-* [Transformer des flux RSS en Podcast grâce à l'IA](https://blog.filador.ch/posts/transformer-des-flux-rss-en-podcast-grace-a-l-ia) - French version
+* [Transform RSS feeds into Podcasts using AI](https://blog.filador.ch/en/posts/transform-rss-feeds-into-podcasts-using-ai) - English version
+* [Transformer des flux RSS en Podcasts grâce à l'IA](https://blog.filador.ch/posts/transformer-des-flux-rss-en-podcasts-grace-a-l-ia) - French version

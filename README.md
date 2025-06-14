@@ -50,6 +50,13 @@ python rss_to_podcast.py --rss-url <RSS_FEED_URL> --site-name <SITE_NAME> [optio
 - An audio file with narration (if MLX Audio is available):  
   `outputs/[site-name]_extracts_YYYY-MM-DD.wav`
 
+### Example
+
+As an example, I generated a podcast using [my personal blog](https://blog.filador.ch/en/). You can find it in the ``example`` folder, it was generated on 14/06/2025.
+
+* [Text](./example/filador_extracts_2025-06-14.txt)
+* [Audio](./example/filador_extracts_2025-06-14.wav)
+
 ### Notes
 
 - You must have an Ollama server running and the specified model available.

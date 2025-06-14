@@ -32,6 +32,7 @@ python rss_to_podcast.py --rss-url <RSS_FEED_URL> --site-name <SITE_NAME> [optio
 |----------------------|---------|---------------------------------------|--------------------------------------------------------------------|
 | `--ollama-url`       | string  | `http://localhost:11434/api/generate` | Ollama API endpoint                                                |
 | `--model-name`       | string  | `gemma3:12b`                          | Ollama model name                                                  |
+| `--requests-timeout` | int     | 90                                    | Requests timeout in seconds                                        |
 | `--rss-url`          | string  | **(required)**                        | RSS feed URL to fetch articles from                                |
 | `--site-name`        | string  | **(required)**                        | Site name (used in output files and intro narration)               |
 | `--content-selector` | string  | `None`                                | CSS selector for main article content (optional)                   |

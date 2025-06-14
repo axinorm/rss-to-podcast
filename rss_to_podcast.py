@@ -40,6 +40,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Comprehensive RSS Article Extractor with Ollama & Audio")
     parser.add_argument('--ollama-url', default="http://localhost:11434/api/generate", help="Ollama API endpoint")
     parser.add_argument('--model-name', default="gemma3:12b", help="Ollama model name")
+    parser.add_argument('--requests-timeout', type=int, default=90, help="Requests timeout in seconds")
     parser.add_argument('--rss-url', required=True, help="RSS feed URL")
     parser.add_argument('--content-selector', default=None, help="CSS selector for main article content (optional)")
     parser.add_argument('--site-name', required=True, help="Site name (for output files and intro)")
@@ -178,7 +179,7 @@ def extract_article_content(url, content_selector=None):
         print(f"Error extracting content from {url}: {e}")
         return ""
 
-def create_comprehensive_extract(text, title, ollama_url, model_name):
+def create_comprehensive_extract(text, title, ollama_url, requests_timeout, model_name):
     """
     Use Ollama LLM to generate a comprehensive extract for narration.
     """
@@ -210,7 +211,7 @@ Extract:"""
         }
     }
     try:
-        response = requests.post(ollama_url, json=payload, timeout=90)
+        response = requests.post(ollama_url, json=payload, timeout=requests_timeout)
         response.raise_for_status()
         result = response.json()
         return result.get('response', '').strip()
@@ -303,7 +304,7 @@ def main():
         print("🤖 Generating comprehensive extract...")
         
         # Generate extract using Ollama LLM
-        extract = create_comprehensive_extract(content, article['title'], args.ollama_url, args.model_name)
+        extract = create_comprehensive_extract(content, article['title'], args.ollama_url, args.requests_timeout, args.model_name)
         print("📋 Comprehensive Extract:")
         print(f"   {extract}")
         print("-" * 80)
